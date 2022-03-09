@@ -161,13 +161,14 @@ BUTTONS & CONTAINERS
 
 .icon {
 	color: rgb(82, 38, 94);
+	pointer-events: none;
 }
 
 /*====================================
 CLICKED CLASSES
 =====================================*/
 
-.clicked-btn {
+.play {
 	border: 1px solid rgba(00, 00, 00, 55%);
 	padding: 3%;
 	cursor: pointer;
@@ -178,7 +179,7 @@ CLICKED CLASSES
 				rgba(65, 32, 73, 0.575) 0px -3px 0px inset;
 }
 
-.clicked-icon {
+.play .icon {
 	color: rgb(207, 180, 214);
 }
 

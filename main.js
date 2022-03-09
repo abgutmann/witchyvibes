@@ -15,90 +15,47 @@
             //2nd, I want the corresponding sound to stop playing.
             
 //Variables
-    const rainBtn = document.querySelector('#rain')
-    const fireplaceBtn = document.querySelector('#fireplace')
-    const cauldronBtn = document.querySelector('#cauldron')
-    const mortarBtn = document.querySelector('#mortar')
-    const bgmBtn = document.querySelector('#bgm')
-    const musicContainer = document.querySelector('.music-btn')
     const icon = document.querySelector('.icon') 
 
-//Song Titles
-const songs = ['99sounds-rain-modified', 'zapsplat-fire', 'zapsplat-cauldron-modified', 'zapsplat-mortar-modified', 'purrple-cat-green-tea']
-
-// //Song Index
-// let songIndex = 0
-
-// //Initially load song info into DOM
-// loadSong(songs[songIndex])
-
-//loadSong Function
-function loadSong(song) {
-    audio.src = `assets/${song}.mp3`
-}
+function doAudio(number) {
+    let audioelm = document.querySelector(`[data-song-order="${number}"]`)
+    console.log(audioelm)
+    return audioelm
+  }
 
 //playSong
-function playSong() {
-    musicContainer.classList.add('play')
+function playSong(btn) {
+    btn.classList.add('play')
+    let number = btn.getAttribute("data-song")
+    let audio = doAudio(number)
 
     audio.play()
 }
 
 //pauseSong
-function pauseSong() {
-    musicContainer.classList.remove('play')
+function pauseSong(btn) {
+    btn.classList.remove('play')
+    let number = btn.getAttribute("data-song")
+    let audio = doAudio(number)
 
     audio.pause()
 }
 
 
 //Event Listeners
-rainBtn.addEventListener('click', () => {
-    const isPlaying = musicContainer.classList.contains('play', loadSong(songs[0]))
+document.querySelectorAll(".music-btn").forEach((btn)=>{
+    let songNumber = btn.getAttribute('data-song')
 
-    if(isPlaying) {
-        pauseSong()
-    } else {
-        playSong()
-    }
+    btn.addEventListener('click', (e) => {
+        let btn = e.target
+        const isPlaying = btn.classList.contains('play')
+
+        // doAudio(songNumber)
+        if(isPlaying) {
+            pauseSong(btn)
+        } else {
+            playSong(btn)
+        }
+    })
 })
 
-fireplaceBtn.addEventListener('click', () => {
-    const isPlaying = musicContainer.classList.contains('play', loadSong(songs[1]))
-
-    if(isPlaying) {
-        pauseSong()
-    } else {
-        playSong()
-    }
-})
-
-cauldronBtn.addEventListener('click', () => {
-    const isPlaying = musicContainer.classList.contains('play', loadSong(songs[2]))
-
-    if(isPlaying) {
-        pauseSong()
-    } else {
-        playSong()
-    }
-})
-
-mortarBtn.addEventListener('click', () => {
-    const isPlaying = musicContainer.classList.contains('play', loadSong(songs[3]))
-
-    if(isPlaying) {
-        pauseSong()
-    } else {
-        playSong()
-    }
-})
-
-bgmBtn.addEventListener('click', () => {
-    const isPlaying = musicContainer.classList.contains('play', loadSong(songs[4]))
-
-    if(isPlaying) {
-        pauseSong()
-    } else {
-        playSong()
-    }
-})

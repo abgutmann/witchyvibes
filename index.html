@@ -18,26 +18,26 @@
 
         <section class="btn-container">
             <!--RAIN BUTTON-->
-            <button type="button" name="rain-sfx" id="rain" class="music-btn"><i class="fa-solid fa-cloud-rain fa-2xl icon"></i></button>
+            <button type="button" name="rain-sfx" class="music-btn" data-song="0"><i class="fa-solid fa-cloud-rain fa-2xl icon"></i></button>
 
             <!--FIREPLACE BUTTON-->
-            <button type="button" name="fireplace-sfx" id="fireplace" class="music-btn"><i class="fa-solid fa-fire fa-2xl icon"></i></button>
+            <button type="button" name="fireplace-sfx" class="music-btn" data-song="1"><i class="fa-solid fa-fire fa-2xl icon"></i></button>
 
             <!--CAULDRON BUTTON-->
-            <button type="button" name="bubbling-sfx" id="cauldron" class="music-btn"><i class="fa-solid fa-flask fa-2xl icon"></i></button>
+            <button type="button" name="bubbling-sfx" class="music-btn" data-song="2"><i class="fa-solid fa-flask fa-2xl icon"></i></button>
 
             <!--MORTAR BUTTON-->
-            <button type="button" name="mortar-sfx" id="mortar" class="music-btn"><i class="fa-solid fa-mortar-pestle fa-2xl icon"></i></button>
+            <button type="button" name="mortar-sfx" class="music-btn" data-song="3"><i class="fa-solid fa-mortar-pestle fa-2xl icon"></i></button>
 
             <!--BGM BUTTON-->
-            <button type="button" name="bgm-track" id="bgm" class="music-btn"><i class="fa-solid fa-music fa-2xl icon"></i></button>
+            <button type="button" name="bgm-track" class="music-btn" data-song="4"><i class="fa-solid fa-music fa-2xl icon"></i></button>
         </section>
 
-        <audio src="99sounds-rain-modified.mp3" id="audio" loop></audio>
-        <!-- <audio src="zapsplat-fire.mp3" id="audio" loop></audio>
-        <audio src="zapsplat-cauldron-modified.mp3" id="audio" loop></audio>
-        <audio src="zapsplat-mortar-modified.mp3" id="audio" loop></audio>
-        <audio src="purrple-cat-green-tea.mp3" id="audio" loop></audio> -->
+        <audio src="assets/99sounds-rain-modified.mp3" id="rain" data-song-order="0" loop></audio>
+        <audio src="assets/zapsplat-fire.mp3" id="fireplace" data-song-order="1" loop></audio>
+        <audio src="assets/zapsplat-cauldron-modified.mp3" id="cauldron" data-song-order="2" loop></audio>
+        <audio src="assets/zapsplat-mortar-modified.mp3" id="mortar" data-song-order="3" loop></audio>
+        <audio src="assets/purrple-cat-green-tea.mp3" id="bgm" data-song-order="4" loop></audio>
 
         <p class="credits"></p>
 
